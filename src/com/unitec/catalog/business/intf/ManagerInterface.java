@@ -13,5 +13,7 @@ public interface ManagerInterface {
 	public BeanModel updateBean(BeanModel model);
 	
 	public boolean deleteBean(BeanModel model);
+	
+	public ArrayList<BeanModel> searchBeanByName(BeanModel model);
 
 }
