@@ -2,6 +2,7 @@ package com.unitec.catalog.web;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -17,11 +18,14 @@ public class HomePageServlet extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		super.doGet(req, resp);
+		System.out.println("Loading index page");
+		RequestDispatcher dispatcher = req.getServletContext().getRequestDispatcher("/jsp/index.jsp");
+        dispatcher.forward(req, resp);
 	}
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		super.doPost(req, resp);
+//		super.doPost(req, resp);
+		doGet(req, resp);
 	}
 }
