@@ -25,10 +25,15 @@ public class ProductManagerServlet extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		// creating error string
 		String errorString = null;
+		
+		 // getting parameters from jsp tags
 		String nameSearch = (String) req.getParameter("searchByName");
 		ArrayList<BeanModel> list = null;
 		System.out.println("Loading product page");
+		
+		// get all rows if search is empty
 		if (nameSearch == null || nameSearch.isEmpty()){
 			try{
 			ManagerInterface interface1= new  ProductCatalougeManager((Connection)getServletContext().getAttribute("DBConnection"));
@@ -39,6 +44,8 @@ public class ProductManagerServlet extends HttpServlet{
 				errorString = e.getMessage();
 			}
 		}
+		
+		// get searched rows on search
 		else{
 			ProductBean bean= new ProductBean();
 			bean.setProductName(nameSearch);

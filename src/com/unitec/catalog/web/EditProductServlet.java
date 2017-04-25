@@ -30,6 +30,7 @@ public class EditProductServlet extends HttpServlet {
 	    int stock = 0, id = 0;
 		ProductBean bean= new ProductBean();
 		
+		 // new product bean and getting parameters from jsp tags
 		String idString = (String) req.getParameter("id");
 		String name = (String) req.getParameter("name");
 	    String priceString = (String) req.getParameter("price");
@@ -43,12 +44,14 @@ public class EditProductServlet extends HttpServlet {
 	    } catch (Exception e) {
 	    	e.printStackTrace();
 	    }
+	    // setting bean
 	    bean.setProductId(id);
 	    bean.setProductName(name);
 	    bean.setProductPrice(price);
 	    bean.setProductStock(stock);
 	    bean.setProductComments(comment);
 	   
+	   // save bean
 	    try{
 	    ManagerInterface interface1= new  ProductCatalougeManager((Connection)getServletContext().getAttribute("DBConnection"));
 	    interface1.updateBean(bean);

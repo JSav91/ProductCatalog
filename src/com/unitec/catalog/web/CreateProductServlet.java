@@ -28,9 +28,11 @@ public class CreateProductServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		// creating error string
 		String errorString = null;
 		double price = 0;
 	    int stock = 0;
+	    // new product bean and getting parameters from jsp tags
 		ProductBean bean= new ProductBean();
 		String name = (String) req.getParameter("name");
 	    String priceString = (String) req.getParameter("price");
@@ -43,10 +45,13 @@ public class CreateProductServlet extends HttpServlet {
 	    } catch (Exception e) {
 	    	e.printStackTrace();
 	    }
+	    // setting bean
 	    bean.setProductName(name);
 	    bean.setProductPrice(price);
 	    bean.setProductStock(stock);
 	    bean.setProductComments(comment);
+	    
+	    // save bean
 	    try{
 	    ManagerInterface interface1= new  ProductCatalougeManager((Connection)getServletContext().getAttribute("DBConnection"));
 	    interface1.saveBean(bean);
