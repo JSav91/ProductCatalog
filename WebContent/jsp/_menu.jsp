@@ -10,7 +10,7 @@
 	    <ul class="nav navbar-nav">
 	      <li class="active"><a href="${pageContext.request.contextPath}/">Home</a></li>
 	      <li><a href="${pageContext.request.contextPath}/product">Products</a></li>
-	      <li><a href="${pageContext.request.contextPath}/Attendant">Attendants</a></li>
+	      <li><a href="${pageContext.request.contextPath}/attendant">Attendants</a></li>
 	    </ul>
 	  </div>
 	</nav>

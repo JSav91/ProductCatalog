@@ -34,7 +34,7 @@
 	
 	
 	<div class="jumbotron text-center bg-2">
-	  	<h1><a href="${pageContext.request.contextPath}/Attendant">Attendants</a></h1>
+	  	<h1><a href="${pageContext.request.contextPath}/attendant">Attendants</a></h1>
 	  	<p>Browse and manage attendants!</p> 
 	</div>
 	
