@@ -30,7 +30,7 @@
 			<div class="col">
 			</div>
 		</div>
-		<form action="product">
+		<form action="attendant">
 		<div class="row">
 
 			<div class=".col-sm-4 .col-lg-4">
@@ -127,7 +127,7 @@
 								            <td>
 								            	<button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#modalDelete${attendant.attendantId}">Delete</button>
 								            							<c:if test="${not empty attendant}">
-								            							<form action="deleteProduct">
+								            							<form action="deleteAttendant">
 									            								<div class="modal fade" id="modalDelete${attendant.attendantId}" role="dialog">
 																				    <div class="modal-dialog">
 																				    

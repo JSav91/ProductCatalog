@@ -31,7 +31,7 @@ public class ProductManagerServlet extends HttpServlet{
 		 // getting parameters from jsp tags
 		String nameSearch = (String) req.getParameter("searchByName");
 		ArrayList<BeanModel> list = null;
-		System.out.println("Loading product page");
+		System.out.println("Loading product page ");
 		
 		// get all rows if search is empty
 		if (nameSearch == null || nameSearch.isEmpty()){

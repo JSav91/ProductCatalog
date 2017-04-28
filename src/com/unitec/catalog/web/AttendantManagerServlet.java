@@ -37,28 +37,32 @@ public class AttendantManagerServlet extends HttpServlet{
 				 // getting parameters from jsp tags
 				String nameSearch = (String) req.getParameter("searchByName");
 				ArrayList<BeanModel> list = null;
-				System.out.println("Loading attendant page");
+				System.out.println("Loading attendant page ");
 				
 				// get all rows if search is empty
 				if (nameSearch == null || nameSearch.isEmpty()){
 					try{
 					ManagerInterface interface1= new  AttendantManager((Connection)getServletContext().getAttribute("DBConnection"));
 					list = interface1.getAllRows();
+					
 					}
 					catch (Exception e){
 						e.printStackTrace();
 						errorString = e.getMessage();
+						
 					}
 				}
 				
 				// get searched rows on search
 				else{
+					
 					AttendantBean bean= new AttendantBean();
 					bean.setAttendantName(nameSearch);
 					
 					try{
 						ManagerInterface interface1= new  AttendantManager((Connection)getServletContext().getAttribute("DBConnection"));
 						list = interface1.searchBeanByName(bean);
+						
 						}
 						catch (Exception e){
 							e.printStackTrace();

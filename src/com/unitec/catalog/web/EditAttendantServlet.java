@@ -3,6 +3,7 @@ package com.unitec.catalog.web;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -14,6 +15,7 @@ import com.unitec.catalog.business.impl.AttendantManager;
 import com.unitec.catalog.business.impl.ProductCatalougeManager;
 import com.unitec.catalog.business.intf.ManagerInterface;
 
+@WebServlet(name = "EditAttendant", urlPatterns = { "/editAttendant" })
 public class EditAttendantServlet extends HttpServlet{
 
 	@Override

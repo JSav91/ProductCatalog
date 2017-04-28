@@ -34,36 +34,7 @@ public class WelcomeServlet  extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		System.out.println("Server Started>Loading index page");
-//		ProductBean bean= new ProductBean();
-	//	bean.setProductId(6);
-//		bean.setProductName("Desktop");
-	//	bean.setProductPrice(1190.90);
-	//	bean.setProductStock(2);
-	//	bean.setProductComments("HP Pavilion");
-/*		ManagerInterface interface1= new  ProductCatalougeManager((Connection)getServletContext().getAttribute("DBConnection"));
-		ArrayList<BeanModel> list=interface1.searchBeanByName(bean);
-		
-		
-		for(BeanModel bean2:list){
-			ProductBean bean3=(ProductBean) bean2;
-			System.out.println(bean3.getProductPrice()+"\n"+bean3.getProductName()+"\n"+bean3.getProductPrice()+"\n"+bean3.getProductStock());
-		}*/
-		
-//		ManagerInterface interface2= new  AttendantManager((Connection)getServletContext().getAttribute("DBConnection"));
-//		AttendantBean attendantBean= new AttendantBean();
-//		attendantBean.setAttendantName("Tariq");
-//		attendantBean.setAttendantAddress("Unitec");
-//		attendantBean.setAttendantPhone("022612787");
-//		attendantBean.setAttendantComments("Java Lecturer");
-//		attendantBean.setAttendantId(2);
-//		interface2.updateBean(attendantBean);
-		
-/*		for(BeanModel bean12:list2){
-			AttendantBean beanq=(AttendantBean) bean12;
-			System.out.println(beanq.getAttendantName()+"\n"+beanq.getAttendantPhone()+"\n"+beanq.getAttendantAddress()+"\n"+beanq.getAttendantAddress());
-		}*/
-		//ManagerInterface interface2= new AttendantManager();
-		//resp.sendRedirect("jsp/index.jsp");
+
 		RequestDispatcher dispatcher = req.getServletContext().getRequestDispatcher("/jsp/index.jsp");
         dispatcher.forward(req, resp);
 	}
